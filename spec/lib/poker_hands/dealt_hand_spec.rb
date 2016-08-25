@@ -35,4 +35,12 @@ RSpec.describe PokerHands::DealtHand do
       its(:suit)  { is_expected.to eq('D') }
     end
   end
+
+  describe '#hand_type' do
+    describe 'straight flush' do
+      subject { described_class.new('7C 8C 9C TC JC') }
+
+      its(:hand_type) { is_expected.to be(PokerHands::Hand::StraightFlush) }
+    end
+  end
 end

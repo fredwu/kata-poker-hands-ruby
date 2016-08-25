@@ -29,7 +29,17 @@ module PokerHands
       end
 
       def high_card_values
-        raise NotImplementedError
+        card_values
+      end
+
+      def card_values
+        cards.map(&:value).sort do |a, b|
+          Utils.int(b) <=> Utils.int(a)
+        end
+      end
+
+      def card_suits
+        cards.map(&:suit)
       end
     end
   end

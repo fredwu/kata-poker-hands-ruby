@@ -28,6 +28,5 @@ module PokerHands
     Hand::HighCard
   ].freeze
 
-  SUITS  = %w(C D H S).freeze
   VALUES = %w(A K Q J T 9 8 7 6 5 4 3 2).freeze
 end
