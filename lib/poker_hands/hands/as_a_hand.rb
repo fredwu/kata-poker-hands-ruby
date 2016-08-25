@@ -10,7 +10,7 @@ module PokerHands
         if self.class == other.class
           compare_same_types(other)
         else
-          Comparer::SameType.new(self, other).compare
+          Comparer::HandType.new(self, other).compare
         end
       end
 

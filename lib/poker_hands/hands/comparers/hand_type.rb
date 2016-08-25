@@ -2,7 +2,7 @@
 module PokerHands
   module Hand
     module Comparer
-      class SameType
+      class HandType
         attr_reader :left, :right
 
         def initialize(left, right)
