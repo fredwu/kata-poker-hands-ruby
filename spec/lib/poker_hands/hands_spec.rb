@@ -4,66 +4,75 @@ require 'spec_helper'
 RSpec.describe 'hands' do
   describe 'different types comparison' do
     it 'straight flush > four of a kind' do
-      better = PokerHands::Hand::StraightFlush.new
-      worse  = PokerHands::Hand::FourOfAKind.new
+      left  = PokerHands::Hand::StraightFlush.new
+      right = PokerHands::Hand::FourOfAKind.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'four of a kind > full house' do
-      better = PokerHands::Hand::FourOfAKind.new
-      worse  = PokerHands::Hand::FullHouse.new
+      left  = PokerHands::Hand::FourOfAKind.new
+      right = PokerHands::Hand::FullHouse.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'full house > flush' do
-      better = PokerHands::Hand::FullHouse.new
-      worse  = PokerHands::Hand::Flush.new
+      left  = PokerHands::Hand::FullHouse.new
+      right = PokerHands::Hand::Flush.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'flush > straight' do
-      better = PokerHands::Hand::Flush.new
-      worse  = PokerHands::Hand::Straight.new
+      left  = PokerHands::Hand::Flush.new
+      right = PokerHands::Hand::Straight.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'straight > three of a kind' do
-      better = PokerHands::Hand::Straight.new
-      worse  = PokerHands::Hand::ThreeOfAKind.new
+      left  = PokerHands::Hand::Straight.new
+      right = PokerHands::Hand::ThreeOfAKind.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'three of a kind > two pairs' do
-      better = PokerHands::Hand::ThreeOfAKind.new
-      worse  = PokerHands::Hand::TwoPairs.new
+      left  = PokerHands::Hand::ThreeOfAKind.new
+      right = PokerHands::Hand::TwoPairs.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'two pairs > pair' do
-      better = PokerHands::Hand::TwoPairs.new
-      worse  = PokerHands::Hand::Pair.new
+      left  = PokerHands::Hand::TwoPairs.new
+      right = PokerHands::Hand::Pair.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'pair > high card' do
-      better = PokerHands::Hand::Pair.new
-      worse  = PokerHands::Hand::HighCard.new
+      left  = PokerHands::Hand::Pair.new
+      right = PokerHands::Hand::HighCard.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
     end
 
     it 'straight flush > high card' do
-      better = PokerHands::Hand::StraightFlush.new
-      worse  = PokerHands::Hand::HighCard.new
+      left  = PokerHands::Hand::StraightFlush.new
+      right = PokerHands::Hand::HighCard.new
 
-      expect(better).to be > worse
+      expect(left).to be > right
+    end
+  end
+
+  describe 'same types comparison' do
+    it 'high cards' do
+      left  = PokerHands::Hand::HighCard.new([PokerHands::Card.new('4D'), PokerHands::Card.new('KD')])
+      right = PokerHands::Hand::HighCard.new([PokerHands::Card.new('9H'), PokerHands::Card.new('QH')])
+
+      expect(left).to be > right
     end
   end
 end

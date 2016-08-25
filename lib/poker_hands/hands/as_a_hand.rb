@@ -6,17 +6,25 @@ module PokerHands
         klass.include ::Comparable
       end
 
+      attr_reader :cards
+
+      def initialize(cards = Set.new)
+        @cards = cards
+      end
+
       def <=>(other)
         if self.class == other.class
-          compare_same_types(other)
+          Comparer::CardValue.new(self, other).compare
         else
           Comparer::HandType.new(self, other).compare
         end
       end
 
-      private
+      def valid?
+        raise NotImplementedError
+      end
 
-      def compare_same_types(other)
+      def high_card_values
         raise NotImplementedError
       end
     end

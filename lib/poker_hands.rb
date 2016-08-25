@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 require 'poker_hands/card'
+require 'poker_hands/hands/utils'
 require 'poker_hands/hands/comparers/hand_type'
+require 'poker_hands/hands/comparers/card_value'
 require 'poker_hands/hands/as_a_hand'
 require 'poker_hands/hands/straight_flush'
 require 'poker_hands/hands/four_of_a_kind'
