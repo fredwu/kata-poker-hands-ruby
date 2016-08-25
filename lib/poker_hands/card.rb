@@ -4,7 +4,7 @@ module PokerHands
     attr_reader :value, :suit
 
     def initialize(denotation)
-      @value, @suit = denotation.split("")
+      @value, @suit = denotation.split('')
     end
   end
 end

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
-require "poker_hands/card"
-require "poker_hands/hands/comparers/same_type"
-require "poker_hands/hands/as_a_hand"
-require "poker_hands/hands/straight_flush"
-require "poker_hands/hands/four_of_a_kind"
-require "poker_hands/hands/full_house"
-require "poker_hands/hands/flush"
-require "poker_hands/hands/straight"
-require "poker_hands/hands/three_of_a_kind"
-require "poker_hands/hands/two_pairs"
-require "poker_hands/hands/pair"
-require "poker_hands/hands/high_card"
-require "poker_hands/dealt_hand"
+require 'poker_hands/card'
+require 'poker_hands/hands/comparers/same_type'
+require 'poker_hands/hands/as_a_hand'
+require 'poker_hands/hands/straight_flush'
+require 'poker_hands/hands/four_of_a_kind'
+require 'poker_hands/hands/full_house'
+require 'poker_hands/hands/flush'
+require 'poker_hands/hands/straight'
+require 'poker_hands/hands/three_of_a_kind'
+require 'poker_hands/hands/two_pairs'
+require 'poker_hands/hands/pair'
+require 'poker_hands/hands/high_card'
+require 'poker_hands/dealt_hand'
 
 module PokerHands
   HANDS = [
