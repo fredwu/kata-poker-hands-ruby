@@ -1,5 +1,7 @@
 # frozen_string_literal: true
+require "poker_hands/hands/as_a_hand/comparers/same_type"
 require "poker_hands/hands/as_a_hand/comparable"
+require "poker_hands/hands/as_a_hand/cards_collection"
 require "poker_hands/hands/as_a_hand"
 require "poker_hands/hands/straight_flush"
 require "poker_hands/hands/four_of_a_kind"
