@@ -11,4 +11,5 @@ end
 group :test do
   gem 'rspec', '~> 3.5.0'
   gem 'rspec-its'
+  gem 'rspec-collection_matchers'
 end

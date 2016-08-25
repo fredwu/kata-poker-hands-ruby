@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require 'poker_hands'
 require 'rspec/its'
+require 'rspec/collection_matchers'
 
 Dir["#{__dir__}/support/**/*.rb"].each { |file| require file }
 
