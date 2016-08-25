@@ -15,15 +15,7 @@ module PokerHands
     private
 
     def hand_type
-      Hand::StraightFlush.new(cards).valid_type ||
-        Hand::FourOfAKind.new(cards).valid_type ||
-        Hand::FullHouse.new(cards).valid_type ||
-        Hand::Flush.new(cards).valid_type ||
-        Hand::Straight.new(cards).valid_type ||
-        Hand::ThreeOfAKind.new(cards).valid_type ||
-        Hand::TwoPairs.new(cards).valid_type ||
-        Hand::Pair.new(cards).valid_type ||
-        Hand::HighCard
+      PokerHands::HANDS.detect { |hand| hand.new(cards).valid? }
     end
   end
 end

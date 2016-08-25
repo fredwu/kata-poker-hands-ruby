@@ -5,7 +5,7 @@ module PokerHands
       include AsAHand
 
       def valid?
-        false
+        high_card_values.any?
       end
 
       def high_card_values
