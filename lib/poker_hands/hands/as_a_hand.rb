@@ -20,6 +20,10 @@ module PokerHands
         end
       end
 
+      def valid_type
+        valid? ? self.class : false
+      end
+
       def valid?
         raise NotImplementedError
       end

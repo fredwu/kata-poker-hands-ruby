@@ -4,6 +4,10 @@ module PokerHands
     class HighCard
       include AsAHand
 
+      def valid?
+        false
+      end
+
       def high_card_values
         cards.map(&:value).sort do |a, b|
           Utils.int(b) <=> Utils.int(a)

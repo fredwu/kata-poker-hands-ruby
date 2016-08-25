@@ -2,6 +2,8 @@
 require 'spec_helper'
 
 RSpec.describe PokerHands::Hand::HighCard do
+  it_behaves_like 'a hand'
+
   subject do
     described_class.new(
       [
