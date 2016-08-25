@@ -2,22 +2,37 @@
 require 'spec_helper'
 
 RSpec.describe PokerHands::DealtHand do
-  describe 'cards collection' do
-    let(:hand) { described_class.new }
+  describe '#new' do
+    let(:dealt_hand) { described_class.new('2H 3D 5S 9C KD') }
 
-    subject(:cards) { hand.cards }
+    subject(:cards) { dealt_hand.cards }
 
-    before do
-      hand.cards << PokerHands::Card.new('2H')
-    end
-
-    it { is_expected.to have(1).item }
+    it { is_expected.to have(5).items }
 
     describe 'card' do
       subject { cards.to_a[0] }
 
       its(:value) { is_expected.to eq('2') }
       its(:suit)  { is_expected.to eq('H') }
+    end
+  end
+
+  describe 'cards#<<' do
+    let(:dealt_hand) { described_class.new('2H') }
+
+    subject(:cards) { dealt_hand.cards }
+
+    before do
+      dealt_hand.cards << PokerHands::Card.new('3D')
+    end
+
+    it { is_expected.to have(2).items }
+
+    describe 'card' do
+      subject { cards.to_a[1] }
+
+      its(:value) { is_expected.to eq('3') }
+      its(:suit)  { is_expected.to eq('D') }
     end
   end
 end
