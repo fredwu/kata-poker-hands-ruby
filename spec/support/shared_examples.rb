@@ -2,7 +2,6 @@
 RSpec.shared_examples 'a hand' do
   subject { described_class.new }
 
-  it                     { is_expected.not_to be_valid }
   its(:high_card_values) { is_expected.to be_an(Array) }
 
   describe '#valid_type' do
