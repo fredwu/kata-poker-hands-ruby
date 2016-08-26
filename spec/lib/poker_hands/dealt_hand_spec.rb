@@ -72,5 +72,11 @@ RSpec.describe PokerHands::DealtHand do
 
       its(:hand_type) { is_expected.to be(PokerHands::Hand::ThreeOfAKind) }
     end
+
+    describe 'two pairs' do
+      subject { described_class.new('7C 7D 8H 4D 8S') }
+
+      its(:hand_type) { is_expected.to be(PokerHands::Hand::TwoPairs) }
+    end
   end
 end
