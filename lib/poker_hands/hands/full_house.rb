@@ -5,7 +5,7 @@ module PokerHands
       include AsAHand
 
       def valid?
-        grouped_card_values.values[0] == 3 &&
+        ThreeOfAKind.new(cards).valid? &&
           grouped_card_values.values[1] == 2
       end
     end
