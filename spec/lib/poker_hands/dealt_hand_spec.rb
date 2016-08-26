@@ -35,4 +35,37 @@ RSpec.describe PokerHands::DealtHand do
       its(:suit)  { is_expected.to eq('D') }
     end
   end
+
+  describe 'comparison' do
+    let(:left_hand)  { PokerHands::DealtHand.new(left) }
+    let(:right_hand) { PokerHands::DealtHand.new(right) }
+
+    describe '2H 3D 5S 9C KD vs 2C 3H 4S 8C AH' do
+      let(:left)  { '2H 3D 5S 9C KD' }
+      let(:right) { '2C 3H 4S 8C AH' }
+
+      it { expect(left_hand).to be < right_hand }
+    end
+
+    describe '2H 4S 4C 2D 4H vs 2S 8S AS QS 3S (lol, example is wrong)' do
+      let(:left)  { '2H 4S 4C 2D 4H' }
+      let(:right) { '2S 8S AS QS 3S' }
+
+      it { expect(left_hand).to be > right_hand }
+    end
+
+    describe '2H 3D 5S 9C KD vs 2C 3H 4S 8C KH' do
+      let(:left)  { '2H 3D 5S 9C KD' }
+      let(:right) { '2C 3H 4S 8C KH' }
+
+      it { expect(left_hand).to be > right_hand }
+    end
+
+    describe '2H 3D 5S 9C KD vs 2D 3H 5C 9S KH' do
+      let(:left)  { '2H 3D 5S 9C KD' }
+      let(:right) { '2D 3H 5C 9S KH' }
+
+      it { expect(left_hand).to be == right_hand }
+    end
+  end
 end
