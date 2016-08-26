@@ -84,5 +84,11 @@ RSpec.describe PokerHands::DealtHand do
 
       its(:hand_type) { is_expected.to be(PokerHands::Hand::Pair) }
     end
+
+    describe 'high card' do
+      subject { described_class.new('7C 9D 8H 4D JS') }
+
+      its(:hand_type) { is_expected.to be(PokerHands::Hand::HighCard) }
+    end
   end
 end
