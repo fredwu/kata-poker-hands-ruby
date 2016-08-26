@@ -24,10 +24,6 @@ module PokerHands
         raise NotImplementedError
       end
 
-      def valid_type
-        valid? ? self.class : false
-      end
-
       def high_card_values
         high_cards.map(&:value)
       end
