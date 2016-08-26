@@ -34,17 +34,6 @@ module PokerHands
 
       private
 
-      def grouped_card_values
-        card_values.group_by { |v| v }
-                   .map { |k, v| [k, v.size] }
-                   .sort { |a, b| b[1] <=> a[1] }
-                   .to_h
-      end
-
-      def card_values
-        sorted_cards.map(&:value)
-      end
-
       def high_cards
         sorted_cards
       end
@@ -55,10 +44,21 @@ module PokerHands
         end
       end
 
+      def grouped_card_values
+        card_values.group_by { |v| v }
+                   .map { |k, v| [k, v.size] }
+                   .sort { |a, b| b[1] <=> a[1] }
+                   .to_h
+      end
+
       def sorted_cards
         cards.sort do |a, b|
           Utils.int(b.value) <=> Utils.int(a.value)
         end
+      end
+
+      def card_values
+        sorted_cards.map(&:value)
       end
 
       def card_suits
