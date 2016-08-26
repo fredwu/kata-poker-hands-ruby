@@ -47,14 +47,10 @@ module PokerHands
                    .to_h
       end
 
-      def sorted_cards
+      def card_values
         cards.sort do |a, b|
           Utils.int(b.value) <=> Utils.int(a.value)
-        end
-      end
-
-      def card_values
-        sorted_cards.map(&:value)
+        end.map(&:value)
       end
 
       def card_suits
