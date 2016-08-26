@@ -49,6 +49,12 @@ module PokerHands
         sorted_cards
       end
 
+      def high_cards_by_group
+        grouped_card_values.keys.map do |value|
+          cards.detect { |card| card.value == value }
+        end
+      end
+
       def sorted_cards
         cards.sort do |a, b|
           Utils.int(b.value) <=> Utils.int(a.value)

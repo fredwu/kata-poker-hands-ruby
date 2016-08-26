@@ -19,9 +19,7 @@ module PokerHands
       private
 
       def high_cards
-        grouped_card_values.keys.map do |value|
-          cards.detect { |card| card.value == value }
-        end
+        high_cards_by_group
       end
     end
   end
