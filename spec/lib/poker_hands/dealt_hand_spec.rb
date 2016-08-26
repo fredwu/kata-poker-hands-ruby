@@ -54,5 +54,11 @@ RSpec.describe PokerHands::DealtHand do
 
       its(:hand_type) { is_expected.to be(PokerHands::Hand::FullHouse) }
     end
+
+    describe 'flush' do
+      subject { described_class.new('7C 9C TC 2C QC') }
+
+      its(:hand_type) { is_expected.to be(PokerHands::Hand::Flush) }
+    end
   end
 end
