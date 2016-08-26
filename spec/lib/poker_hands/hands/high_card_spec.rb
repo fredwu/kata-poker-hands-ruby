@@ -3,17 +3,10 @@ require 'spec_helper'
 
 RSpec.describe PokerHands::Hand::HighCard do
   it_behaves_like 'a hand'
+  it_behaves_like 'same type comparison' do
+    let(:left)  { PokerHands::DealtHand.new('7C 9D 8H 4D JS').hand }
+    let(:right) { PokerHands::DealtHand.new('7C 9D 8H 4D TS').hand }
 
-  subject do
-    described_class.new(
-      [
-        PokerHands::Card.new('2H'),
-        PokerHands::Card.new('3H'),
-        PokerHands::Card.new('AH'),
-        PokerHands::Card.new('JH')
-      ]
-    )
+    it { expect(left).to be > right }
   end
-
-  its(:high_card_values) { is_expected.to eq(['A', 'J', '3', '2']) }
 end

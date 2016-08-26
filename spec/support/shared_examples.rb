@@ -13,3 +13,8 @@ RSpec.shared_examples 'a hand' do
     its(:valid_type) { is_expected.to eq(described_class) }
   end
 end
+
+RSpec.shared_examples 'same type comparison' do
+  it { expect(left).to  be_a(described_class) }
+  it { expect(right).to be_a(described_class) }
+end

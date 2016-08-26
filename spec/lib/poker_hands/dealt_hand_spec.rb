@@ -36,59 +36,59 @@ RSpec.describe PokerHands::DealtHand do
     end
   end
 
-  describe '#hand_type' do
+  describe '#hand' do
     describe 'straight flush' do
       subject { described_class.new('7C 8C 9C TC JC') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::StraightFlush) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::StraightFlush) }
     end
 
     describe 'four of a kind' do
       subject { described_class.new('7C 7D 7H 2D 7S') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::FourOfAKind) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::FourOfAKind) }
     end
 
     describe 'full house' do
       subject { described_class.new('7C 7D 2H 2D 7S') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::FullHouse) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::FullHouse) }
     end
 
     describe 'flush' do
       subject { described_class.new('7C 9C TC 2C QC') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::Flush) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::Flush) }
     end
 
     describe 'straight' do
       subject { described_class.new('7D TH 9H 8C JC') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::Straight) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::Straight) }
     end
 
     describe 'three of a kind' do
       subject { described_class.new('7C 7D 2H 4D 7S') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::ThreeOfAKind) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::ThreeOfAKind) }
     end
 
     describe 'two pairs' do
       subject { described_class.new('7C 7D 8H 4D 8S') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::TwoPairs) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::TwoPairs) }
     end
 
     describe 'pair' do
       subject { described_class.new('7C 9D 8H 4D 8S') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::Pair) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::Pair) }
     end
 
     describe 'high card' do
       subject { described_class.new('7C 9D 8H 4D JS') }
 
-      its(:hand_type) { is_expected.to be(PokerHands::Hand::HighCard) }
+      its(:hand) { is_expected.to be_a(PokerHands::Hand::HighCard) }
     end
   end
 end

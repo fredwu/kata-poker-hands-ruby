@@ -12,10 +12,8 @@ module PokerHands
       @cards ||= Set.new
     end
 
-    private
-
-    def hand_type
-      PokerHands::HANDS.detect { |hand| hand.new(cards).valid? }
+    def hand
+      PokerHands::HANDS.map { |hand| hand.new(cards) }.detect(&:valid?)
     end
   end
 end
