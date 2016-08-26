@@ -9,7 +9,7 @@ module PokerHands
       end
 
       def first_pair?
-        grouped_card_values.values[0] == 2
+        Pair.new(cards).valid?
       end
 
       def second_pair?

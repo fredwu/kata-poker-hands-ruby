@@ -31,7 +31,7 @@ module PokerHands
       def grouped_card_values
         card_values.group_by { |v| v }
                    .map { |k, v| [k, v.size] }
-                   .sort { |a, b| b[1].size <=> a[1].size }
+                   .sort { |a, b| b[1] <=> a[1] }
                    .to_h
       end
 
