@@ -1,5 +1,7 @@
 # PokerHands
 
+Read [requirements](REQUIREMENTS.md) for details about the kata.
+
 ## Usage
 
 Start the irb console:
