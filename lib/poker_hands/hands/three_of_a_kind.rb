@@ -11,7 +11,7 @@ module PokerHands
       private
 
       def high_cards
-        [high_cards_by_group[0]].compact
+        [super[0]].compact
       end
     end
   end

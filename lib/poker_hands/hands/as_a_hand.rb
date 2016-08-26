@@ -35,10 +35,6 @@ module PokerHands
       private
 
       def high_cards
-        sorted_cards
-      end
-
-      def high_cards_by_group
         grouped_card_values.keys.map do |value|
           cards.detect { |card| card.value == value }
         end
