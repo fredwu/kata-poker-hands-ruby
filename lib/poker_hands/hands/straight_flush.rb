@@ -5,13 +5,7 @@ module PokerHands
       include AsAHand
 
       def valid?
-        Flush.new(cards).valid? && straight?
-      end
-
-      private
-
-      def straight?
-        PokerHands::VALUES.join.include?(card_values.join)
+        Flush.new(cards).valid? && Straight.new(cards).valid?
       end
     end
   end
