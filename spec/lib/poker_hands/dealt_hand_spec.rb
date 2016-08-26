@@ -42,5 +42,11 @@ RSpec.describe PokerHands::DealtHand do
 
       its(:hand_type) { is_expected.to be(PokerHands::Hand::StraightFlush) }
     end
+
+    describe 'four of a kind' do
+      subject { described_class.new('7C 7D 7H 2D 7S') }
+
+      its(:hand_type) { is_expected.to be(PokerHands::Hand::FourOfAKind) }
+    end
   end
 end

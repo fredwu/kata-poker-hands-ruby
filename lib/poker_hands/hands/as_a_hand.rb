@@ -20,12 +20,19 @@ module PokerHands
         end
       end
 
+      def valid?
+        raise NotImplementedError
+      end
+
       def valid_type
         valid? ? self.class : false
       end
 
-      def valid?
-        raise NotImplementedError
+      def grouped_card_values
+        card_values.group_by { |v| v }
+                   .map { |k, v| [k, v.size] }
+                   .sort { |a, b| b[1].size <=> a[1].size }
+                   .to_h
       end
 
       def high_card_values
