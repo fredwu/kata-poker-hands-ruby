@@ -66,13 +66,4 @@ RSpec.describe 'hands' do
       expect(left).to be > right
     end
   end
-
-  describe 'same types comparison' do
-    it 'high cards' do
-      left  = PokerHands::Hand::HighCard.new([PokerHands::Card.new('4D'), PokerHands::Card.new('KD')])
-      right = PokerHands::Hand::HighCard.new([PokerHands::Card.new('9H'), PokerHands::Card.new('QH')])
-
-      expect(left).to be > right
-    end
-  end
 end
