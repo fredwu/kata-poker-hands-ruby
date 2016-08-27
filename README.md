@@ -2,7 +2,15 @@
 
 Read [requirements](REQUIREMENTS.md) for details about the kata. An Elixir version can be found [here](https://github.com/fredwu/kata-poker-hands-elixir).
 
+## Dev Environment
+
+- Ruby 2.3.1
+
 ## Usage
+
+```
+bundle install
+```
 
 Start the irb console:
 
