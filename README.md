@@ -1,6 +1,6 @@
 # PokerHands
 
-Read [requirements](REQUIREMENTS.md) for details about the kata.
+Read [requirements](REQUIREMENTS.md) for details about the kata. An Elixir version can be found [here](https://github.com/fredwu/kata-poker-hands-elixir).
 
 ## Usage
 
